@@ -20,5 +20,5 @@ py -m venv "./venv"
 pip install -r requirements-freeze.txt
 
 # Run the program in the virtual environment
-py joystick_test.py
+py main.py
 ```

@@ -23,4 +23,4 @@ jobs:
       - name: Install dependencies
         run: pip install -r ./requirements-freeze.txt
       - name: Run mypy
-        run: ${{ startsWith(matrix.os, 'windows') && 'python' || 'python3' }} -m mypy './src/'
+        run: ${{ startsWith(matrix.os, 'windows') && 'python' || 'python3' }} -m mypy .
