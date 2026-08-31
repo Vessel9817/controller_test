@@ -28,6 +28,8 @@ joystick.open()
 window = pyglet.window.Window(width=800, height=800)
 batch = pyglet.graphics.Batch()
 
+window.set_caption('Joystick Test')
+
 # Labels
 pyglet.text.Label('Buttons:', x=15, y=window.height - 25, font_size=14, batch=batch, color=WHITE)
 pyglet.text.Label('D-pad:', x=window.width - 125, y=window.height - 25, font_size=14, batch=batch, color=WHITE)
