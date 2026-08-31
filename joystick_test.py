@@ -1,6 +1,12 @@
 '''
-Fork of: https://github.com/pyglet/pyglet/blob/master/examples/input/joystick.py
-Complete with AV8R Flight Stick calibrated joystick, buttons, switches, dials, z-rotation and deadzone
+An AV8R-01 Flight Stick joystick calibration visualizer,
+complete with buttons, dial, joystick, lever, z-rotation.
+
+Slight stick jittering is normal and indicates the software needs to slightly
+widen its deadzone. Unresponsive controls indicates potential driver issues.
+
+Credit to:
+https://github.com/pyglet/pyglet/blob/1b80240d3546980e27e77ad0fd3bf0c3aea09c7d/examples/input/joystick.py
 '''
 
 import pyglet
@@ -11,6 +17,8 @@ import math
 # TODO Add z-rotation controls
 
 # TODO Configure device manager?
+
+# TODO Make labels actually visible onscreen
 
 #pyglet.input.win32._di_device_manager._recheck_devices()
 
