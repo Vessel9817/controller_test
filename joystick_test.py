@@ -36,28 +36,22 @@ joystick.open()
 window = pyglet.window.Window(width=800, height=800)
 batch = pyglet.graphics.Batch()
 x = 35
-
-window.set_caption('Joystick Test')
-
+rows = len(joystick.buttons)
 button_labels = [
     pyglet.text.Label(text='Buttons:', x=x, y=window.height - 25, font_size=14, anchor_x='left', batch=batch, color=WHITE),
     pyglet.text.Label(text='D-pad:', x=window.width - 125, y=window.height - 25, font_size=14, anchor_x='left', batch=batch, color=WHITE)
 ]
 button_shapes = []
-rows = len(joystick.buttons) + 1 # +1 for custom button
+
+window.set_caption('Joystick Test')
 
 y = window.height - 25
-for i in range(len(joystick.buttons)):
+for i in range(rows):
     y -= 25
     label = pyglet.text.Label(text=f'{i}:', x=x, y=y, font_size=14, anchor_x='right', batch=batch, color=WHITE)
     button_labels.append(label)
     shape = pyglet.shapes.Rectangle(x + 10, y + 1, 10, 10, batch=batch, color=RED)
     button_shapes.append(shape)
-
-# Adding custom dial
-y = window.height - 25 - 25 * rows
-custom_label = pyglet.text.Label(text=f'{rows-1}:', x=x, y=y, font_size=14, anchor_x='right', batch=batch, color=WHITE)
-custom_dial = pyglet.shapes.Rectangle(x + 10, y + 1, 10, 10, batch=batch, color=RED)
 
 joystick_rect = pyglet.shapes.Rectangle(window.width // 2, window.height // 2, 10, 10, batch=batch, color=PURPLE)
 joystick_rect.anchor_position = joystick_rect.width // 2, joystick_rect.height // 2
@@ -84,12 +78,9 @@ def on_draw():
     joystick_rect.height = 10 + ry + z
 
     # Buttons
-    for i in range(len(joystick.buttons)):
+    for i in range(rows):
         rect = button_shapes[i]
         rect.color = GREEN if joystick.buttons[i] else RED
-
-    # Dial
-    custom_dial.color = GREEN if not (joystick.buttons[-1] or joystick.buttons[-2]) else RED
 
     # Hat (D-pad)
     d_pad_rect.position = (window.width - 100 + joystick.hat_x * 50), (window.height - 100 + joystick.hat_y * 50)
