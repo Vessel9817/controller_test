@@ -1,9 +1,11 @@
 '''
 An AV8R-01 Flight Stick joystick calibration visualizer,
-complete with buttons, dial, joystick, lever, z-rotation.
+complete with buttons, dial, joystick, lever and z-rotation.
+Should work with other controllers.
 
-Slight stick jittering is normal and indicates the software needs to slightly
-widen its deadzone. Unresponsive controls indicates potential driver issues.
+Slight stick jittering is normal and indicates the software needs to use
+a small deadzone. Heavy jittering is a sign of the device hardware aging poorly.
+Unresponsive controls indicates potential driver issues.
 
 Credit to:
 https://github.com/pyglet/pyglet/blob/1b80240d3546980e27e77ad0fd3bf0c3aea09c7d/examples/input/joystick.py
@@ -89,7 +91,7 @@ def on_draw():
     # Dial
     custom_dial.color = GREEN if not (joystick.buttons[-1] or joystick.buttons[-2]) else RED
 
-    # D-pad (hat)
+    # Hat (D-pad)
     d_pad_rect.position = (window.width - 100 + joystick.hat_x * 50), (window.height - 100 + joystick.hat_y * 50)
 
     for i, rect in enumerate(d_pad_empty_rects):
