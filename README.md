@@ -1,6 +1,6 @@
 # Joystick Visual Test
 
-[![License][license-badge]](LICENSE)
+[![License][license-badge]](LICENSE.md)
 [![CI][ci-badge]][ci-workflow]
 
 Note: For Windows users, use the built-in `joy.cpl` executable to visually test
