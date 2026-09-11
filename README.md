@@ -26,6 +26,6 @@ pip install -r requirements-freeze.txt
 py main.py
 ```
 
-[license-badge]: https://raw.githubusercontent.com/Vessel9817/controller_test/refs/heads/main/license.svg
+[license-badge]: https://raw.githubusercontent.com/Vessel9817/controller_test/refs/heads/main/badge.svg
 [ci-badge]: https://github.com/Vessel9817/controller_test/actions/workflows/ci.yml/badge.svg
 [ci-workflow]: https://github.com/Vessel9817/controller_test/actions/workflows/ci.yml
